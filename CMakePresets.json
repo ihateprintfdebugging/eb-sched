@@ -1,0 +1,33 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "ninja-linux-debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      },
+      "environment": {
+        "VCPKG_DEFAULT_BINARY_CACHE": "${sourceDir}/vcpkg_installed/"
+      }
+    },
+    {
+      "name": "jetson-nano",
+      "displayName": "Jetson Nano (AArch64)",
+      "description": "Build for NVIDIA Jetson Nano using vcpkg",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/jetson",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_C_COMPILER": "/usr/bin/gcc",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      },
+      "environment": {
+        "VCPKG_DEFAULT_BINARY_CACHE": "${sourceDir}/vcpkg_installed/"
+      }
+    }
+  ]
+}
