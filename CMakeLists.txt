@@ -30,6 +30,7 @@ endif()
 
 add_executable(EBSched 
     src/main.cpp 
+    src/ebsched.cpp
 )
 
 target_include_directories(EBSched PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
